@@ -30,7 +30,7 @@ def lambda_handler(event, context):
     method = http['method']
     path = http['path']
 
-    if (method, path) == ('POST', '/'):
+    if (method, path) == ('GET', '/'):
         return start_auth_session(domain_name)
     elif (method, path) == ('GET', '/authorized'):
         if 'queryStringParameters' not in event:
